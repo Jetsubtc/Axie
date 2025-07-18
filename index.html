@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>beta.axie</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="menu-bar">
+    <div class="menu-left">
+      <button id="menuButton">➤</button>
+    </div>
+    <div class="menu-right">
+      <span id="balanceDisplay">Balance: 6 HYPE</span>
+      <button id="connectWallet">0xA4bF39...</button>
+    </div>
+  </div>
+
+  <div id="floatingInfoBox"></div>
+
+  <div class="container" id="gameArea">
+
+    <div class="layout">
+      <div class="multiplier-label">1.0x</div>
+      <div class="blocks">
+        <div class="block"><img src="images/axie.png" alt="Axie" /></div>
+        <div class="block"><img src="images/axie.png" alt="Axie" /></div>
+        <div class="block"><img src="images/axie.png" alt="Axie" /></div>
+      </div>
+    </div>
+
+    <div class="layout">
+      <div class="multiplier-label">2.0x</div>
+      <div class="blocks">
+        <div class="block"><img src="images/axie.png" alt="Axie" /></div>
+        <div class="block"><img src="images/axie.png" alt="Axie" /></div>
+        <div class="block"><img src="images/axie.png" alt="Axie" /></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="bottom-box">
+    <div class="balance-info">
+      <div>Multiplier: <span id="currentMultiplier">1.00x</span></div>
+      <div class="hype-container">
+        <img src="images/hype.png" alt="HYPE" />
+        <span id="hypeAmount" class="hype">1.00</span>
+      </div>
+    </div>
+
+    <button id="cashOutBtn" class="btn-claim">Cash Out</button>
+    <button id="restartBtn" class="btn" style="display:none;">Restart</button>
+  </div>
+
+  <div id="losePopup" class="popup hidden">
+    <img src="images/cry.png" alt="Cry" />
+  </div>
+
+  <div id="winPopup" class="popup hidden">
+    <img src="images/happy.gif" alt="Win" />
+  </div>
+
+  <script src="script.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+
+
+  <style>
+    /* Moved inline popup styles here for clarity */
+    .popup {
+      position: fixed;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      pointer-events: none;
+    }
+    .popup img {
+      max-width: 150px;
+      max-height: 150px;
+    }
+    .popup.hidden {
+      display: none;
+    }
+    /* Hype container styling */
+    .hype-container {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 700;
+      font-size: 18px;
+      color: #ffcb05;
+      user-select: none;
+    }
+    .hype-container img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+  </style>
+
+</body>
+</html>
